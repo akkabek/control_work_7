@@ -1,0 +1,13 @@
+{% csrf_token %}
+
+<input
+    type="email"
+    name="check_email"
+    class="form-control"
+    value="">
+
+{% if errors.email %}
+    <p class="form-error">
+        {{ errors.email }}
+    </p>
+{% endif %}
