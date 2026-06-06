@@ -14,3 +14,6 @@ class GuestbookEntryForm(forms.Form):
         max_length=2000, required=True, label='Текст',
         widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 4})
     )
+
+class SearchForm(forms.Form):
+    query = forms.CharField(required=False, label='Поиск по имени')

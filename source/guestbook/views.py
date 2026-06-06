@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from guestbook.forms import GuestbookEntryForm
+from guestbook.forms import GuestbookEntryForm, SearchForm
 from guestbook.models import GuestbookEntry
 
 
 def index_view(request):
-    entries = GuestbookEntry.objects.all().order_by('-created_at').filter(status='active')
-    context = {'entries': entries}
+    entries = GuestbookEntry.objects.filter(status='active').order_by('-created_at')
+    search_form = SearchForm(data=request.GET)
+    if search_form.is_valid():
+        query = search_form.cleaned_data.get('query')
+        if query:
+            entries = entries.filter(author=query)
+
+    form = GuestbookEntryForm()
+    context = {'entries': entries, 'search_form': search_form, 'form': form}
     return render(request, 'index.html', context)
 
 def entry_create_view(request, *args, **kwargs):
@@ -56,4 +63,3 @@ def entry_delete_view(request, pk):
         else:
             errors['email'] = 'Email does not match'
     return render (request, 'entry_delete.html', context={'entry': entry, 'errors': errors})
-
