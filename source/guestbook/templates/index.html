@@ -26,9 +26,9 @@
         <a href="{% url 'edit' entry.pk %}" class="btn btn-outline-warning">
             <i class="fa-regular fa-pen-to-square"></i>
         </a>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#">
+        <a href="{% url 'delete' entry.pk %}" class="btn btn-sm btn-outline-danger">
             <i class="fa-regular fa-trash-can"></i>
-        </button>
+        </a>
         </div>
     </div>
 {% endfor %}

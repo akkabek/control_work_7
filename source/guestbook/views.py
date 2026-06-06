@@ -45,4 +45,15 @@ def entry_edit_view(request, pk):
         else:
             return render(request, 'entry_edit.html', context={'form': form, 'entry': entry})
 
+def entry_delete_view(request, pk):
+    entry = get_object_or_404(GuestbookEntry, pk=pk)
+    errors = {}
+    if request.method == 'POST':
+        check_email = request.POST.get('check_email')
+        if check_email == entry.email:
+            entry.delete()
+            return redirect('list')
+        else:
+            errors['email'] = 'Email does not match'
+    return render (request, 'entry_delete.html', context={'entry': entry, 'errors': errors})
 
