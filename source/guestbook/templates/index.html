@@ -23,7 +23,7 @@
             <p>{{ entry.content }}</p>
         </div>
         <div class="text-end me-3">
-        <a href="#" class="btn btn-outline-warning">
+        <a href="{% url 'edit' entry.pk %}" class="btn btn-outline-warning">
             <i class="fa-regular fa-pen-to-square"></i>
         </a>
         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#">

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from guestbook.forms import GuestbookEntryForm
 from guestbook.models import GuestbookEntry
@@ -24,3 +24,25 @@ def entry_create_view(request, *args, **kwargs):
             return redirect('list')
         else:
             return render(request, 'entry_create.html', context={'form': form})
+
+def entry_edit_view(request, pk):
+    entry = get_object_or_404(GuestbookEntry, pk=pk)
+    if request.method == 'GET':
+        form = GuestbookEntryForm(initial={
+            'author': entry.author,
+            'email': entry.email,
+            'content': entry.content
+        })
+        return render(request, 'entry_edit.html', context={'form':form,'entry': entry})
+    elif request.method == 'POST':
+        form = GuestbookEntryForm(data=request.POST)
+        if form.is_valid():
+            entry.author = form.cleaned_data['author']
+            entry.email = form.cleaned_data['email']
+            entry.content = form.cleaned_data['content']
+            entry.save()
+            return redirect('list')
+        else:
+            return render(request, 'entry_edit.html', context={'form': form, 'entry': entry})
+
+
