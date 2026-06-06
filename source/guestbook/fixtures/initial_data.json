@@ -1,0 +1,92 @@
+[
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 1,
+  "fields": {
+    "author": "John Doe",
+    "email": "johndoe@gmail.com",
+    "content": "lorem ipsum",
+    "created_at": "2026-06-06T07:24:30.988Z",
+    "updated_at": "2026-06-06T07:45:10.513Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 2,
+  "fields": {
+    "author": "Ivan Ivanov",
+    "email": "ivan_ivanov@gmail.com",
+    "content": "lorem lorem",
+    "created_at": "2026-06-06T07:29:26.317Z",
+    "updated_at": "2026-06-06T07:45:02.194Z",
+    "status": "active"
+  }
+},
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 3,
+  "fields": {
+    "author": "Ermek Ermekov",
+    "email": "ermek_ermekov@gmail.com",
+    "content": "ipsum ipsum",
+    "created_at": "2026-06-06T07:30:10.261Z",
+    "updated_at": "2026-06-06T07:30:10.261Z",
+    "status": "active"
+  }
+},
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 4,
+  "fields": {
+    "author": "Ann Smith",
+    "email": "annsmith@gmail.com",
+    "content": "ipsum lorem",
+    "created_at": "2026-06-06T07:30:47.941Z",
+    "updated_at": "2026-06-06T07:45:14.125Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 5,
+  "fields": {
+    "author": "Tumar Sarieva",
+    "email": "tumar_sarieva@gmail.com",
+    "content": "ipsum lorem ipsum",
+    "created_at": "2026-06-06T07:31:39.486Z",
+    "updated_at": "2026-06-06T07:31:39.486Z",
+    "status": "active"
+  }
+},
+{
+  "model": "guestbook.guestbookentry",
+  "pk": 6,
+  "fields": {
+    "author": "Anna Vasilyeva",
+    "email": "Anna_vasilyeva@gmail.com",
+    "content": "lorem ipsum lorem",
+    "created_at": "2026-06-06T07:32:21.360Z",
+    "updated_at": "2026-06-06T07:32:21.360Z",
+    "status": "active"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$XjAvLRRo9J8MivodSWK2zS$CZJj3/wKZoi0BliBVAnzhuIo8ObO+pp4zsNc0WpPJwc=",
+    "last_login": "2026-06-06T07:19:11.884Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-06T07:16:45.218Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
